@@ -39,7 +39,7 @@ jobs:
             - uses: actions/upload-artifact@v3
               with:
                 name: paper
-                path: out/paper_release/
+                path: Paper-Server/target/paper-1.16.5.jar
             - name: Build javadocs
               run: mvn -pl Paper-API,Paper-MojangAPI -am javadoc:javadoc
    
