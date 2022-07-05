@@ -35,7 +35,8 @@ jobs:
                   git config --global user.email "no-reply@github.com"
                   git config --global user.name "Github Actions"
                   ./paper build
-            - with:
+            - uses: actions/upload-artifact@v3
+              with:
                 name: paper
                 path: out/paper_release/
             - name: Build javadocs
