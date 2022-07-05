@@ -32,9 +32,9 @@ jobs:
                   restore-keys: ${{ runner.os }}-paper-2
             - name: Patch and build
             - run: |
+                  chmod +x ./paper
                   git config --global user.email "no-reply@github.com"
                   git config --global user.name "Github Actions"
-                  
                   ./paper build
             - uses: actions/upload-artifact@v3
               with:
