@@ -31,10 +31,13 @@ jobs:
                   key: ${{ runner.os }}-paper-2-${{ hashFiles('**/pom.xml') }}
                   restore-keys: ${{ runner.os }}-paper-2
             - name: Patch and build
-              run: |
+            - run: |
                   git config --global user.email "no-reply@github.com"
                   git config --global user.name "Github Actions"
                   ./paper build
+            - with:
+                name: paper
+                path: out/paper_release/
             - name: Build javadocs
               run: mvn -pl Paper-API,Paper-MojangAPI -am javadoc:javadoc
    
